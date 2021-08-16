@@ -1,7 +1,5 @@
 import {Avatar, Typography} from '@material-ui/core';
 import {red} from '@material-ui/core/colors';
-import apiweatherapp_1 from "../images/apiweatherapp/1.png";
-import apiweatherapp_2 from "../images/apiweatherapp/1.png";
 
 const projects = [
     {

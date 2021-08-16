@@ -1,7 +1,7 @@
 import { Box, Button, Stack, Slide } from "@material-ui/core";
 import { Document, Page, pdfjs } from 'react-pdf';
 import { useState, useEffect } from 'react';
-import {indigo} from '@material-ui/core/colors';
+import { indigo } from '@material-ui/core/colors';
 import resume from "../images/resumeTemp.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -39,7 +39,7 @@ function Resume() {
                 </Stack>
             </Box>
 
-            <Box sx={{ 'canvas': { borderRadius: '0.7rem', border:`0.2rem solid ${indigo[900]}`} }}>
+            <Box sx={{ 'canvas': { borderRadius: '0.7rem', border: `0.2rem solid ${indigo[900]}` } }}>
                 <Document
                     file={resume}
                     onLoadSuccess={onDocumentLoadSuccess}>
