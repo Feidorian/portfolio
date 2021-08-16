@@ -14,9 +14,11 @@ const projects = [
         link: "https://feidorian.dev",
         summary: 
         <span>
-            Portfolio (feidorian.dev) is a publicly-hosted web-app designed to share employment-relevant information about myself, in addition to serving as a proof of concept of my capabilities.
+            Portfolio (feidorian.dev) is a publicly-hosted web-app designed to share employment-relevant information about myself, in addition to serving as a proof of concept of my abilities.
             <br/><br/>
             The app was developed as a React Application, built & deployed through github pages, and then routed to its residing domain url.
+            <br/><br/>
+            The app is fully responsive, with a mobile-first UI designed to be intuitive, easily navigable & asthetic.
             <br/><br/>
             The CSS implementation consists mostly of Material UI Components, with a few instances of React-Bootstrap and Vanilla CSS.
         </span>,

@@ -14,7 +14,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 const tabList = [
     { icon: 'user', title: 'AboutMe', badgeCount: 0, link: Paths.aboutMe },
     { icon: 'school', title: 'Education', badgeCount: 4, link: Paths.education },
-    { icon: 'network-wired', title: 'Projects', badgeCount: 1, link: Paths.projects },
+    { icon: 'network-wired', title: 'Projects', badgeCount: 2, link: Paths.projects },
     { icon: 'code', title: 'Skills', badgeCount: '40', link: Paths.skills },
     { icon: 'book', title: 'Courses', badgeCount: '13', link: Paths.courses },
     { icon: 'briefcase', title: 'Work History', badgeCount: '1', link: Paths.workHistory },
@@ -67,9 +67,14 @@ function Nav() {
 
                             <Stack direction='row' alignItems='center' spacing={0.5} >
                                 <Avatar src={wsb} sx={{ mr: '0.2rem' }} sx={{ display: 'inline-block' }} />
-                                <Typography className='colorTrans' sx={{ fontSize: {xs:'1.1rem',sm:'1.5rem'}, fontWeight: '500', display: 'inline-block' }}>
+                                <Box display='flex' flexDirection='column' justifyContent='center' textAlign='center' paddingLeft={0.3}>
+                                <Typography className='colorTrans'  sx={{fontSize:{xs:'1.2rem', sm:'1.4rem'}, fontWeight:'500'}} >
+                                    Brian Ojoh Mile
+                                </Typography>
+                                <Typography className='colorTrans'  sx={{fontSize:{xs:'1.2rem', sm:'1.4rem'}, fontWeight:'500'}}>
                                     Software Developer
                                 </Typography>
+                                </Box>
                             </Stack>
 
                             <Stack direction='row' alignItems='center'>
