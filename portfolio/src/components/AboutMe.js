@@ -26,7 +26,7 @@ function AboutMe() {
                     <Box p={0.5}>
                         <Paper component={Box} elevation={3} mx='auto' p={1} maxWidth='25rem' sx={{ borderRadius: '0.5rem', flexGrow: 0.2 }}>
                             <Stack direction='row'>
-                                <Box component='img' src={avatar} width='9rem' borderRadius='0.5rem' border='1px solid #d3d3d3' p={10 / 12} />
+                                <Box component='img' src={avatar} width='9rem' height='11rem' borderRadius='0.5rem' border='1px solid #d3d3d3' p={10 / 12} />
                                 <Stack flexGrow='1' justifyContent='center' spacing={1}>
                                     {[
                                         {content:'Brian Ojoh Mile', fontSize:'1.5rem', color:teal[900]},
