@@ -1,5 +1,5 @@
 import { Avatar, Box, Card, CardContent, CardHeader, CardMedia, CardActions, Grid, Typography, Paper, IconButton, Chip, Icon } from "@material-ui/core";
-import { red, indigo } from "@material-ui/core/colors"
+import { teal, indigo } from "@material-ui/core/colors"
 import NearMeIcon from '@material-ui/icons/NearMe';
 import { Carousel } from "react-bootstrap";
 import projects from "../data/projects";
@@ -30,8 +30,8 @@ function Projects() {
                                 title={item.title}
                                 subheader={item.subtitle}
                                 action={
-                                    <IconButton component='a' href={item.link} target='_blank'>
-                                        <NearMeIcon sx={{ color: indigo[500], fontSize: '2rem' }} />
+                                    <IconButton component='a' href={item.link} target='_blank' sx={{backgroundColor:teal[50], ':hover':{backgroundColor:teal[200]}}}>
+                                        <NearMeIcon sx={{ color: indigo[500], fontSize: '2rem'}} />
                                     </IconButton>
                                 }>
 

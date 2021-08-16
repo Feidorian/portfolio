@@ -1,6 +1,7 @@
-import { Box, Grid, Paper, Stack, Typography } from "@material-ui/core";
+import { Box, Grid, IconButton, Paper, Stack, Typography } from "@material-ui/core";
 import { indigo, pink, teal, red, green, deepOrange, deepPurple, grey } from '@material-ui/core/colors';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import NearMeIcon from '@material-ui/icons/NearMe';
 import { useState, useEffect} from "react";
 
 const data =[
@@ -10,7 +11,8 @@ const data =[
         term: "UMD Spring 2021",
         summary: "Input/output processors and techniques. Intra-system communication, \
         buses, caches. Addressing and memory hierarchies. Microprogramming, parallelism, and pipelining.",
-        concepts: "C, linux"
+        concepts: "C, linux",
+        link:'http://www.cs.umd.edu/class/spring2021/cmsc411/'
     },
     {
         code: 'CMSC 389N',
@@ -19,7 +21,8 @@ const data =[
         summary: "An introduction to the development of single page Web-based applications (SPA's) using JavaScript \
                 for both the front end client and back-end api/service. We will be devleoping applications using a micro-service \
                 architecture pattern and discussing throughout the evolution of web application architectures and current trends.",
-        concepts: "HTML, CSS, Javascript, Node.js, React, Boostrap, express"
+        concepts: "HTML, CSS, Javascript, Node.js, React, Boostrap, express",
+        link:'https://egonzal5.github.io/389N'
     },
     {
         code: 'CMSC 320',
@@ -29,7 +32,8 @@ const data =[
         messy data to knowledge and actionable insights. Provides a broad overview of several topics including statistical \
         data analysis, basic data mining and machine learning algorithms, large-scale data management, cloud computing, and \
         information visualization.",
-        concepts: "Python, Docker, Jupyter"
+        concepts: "Python, Docker, Jupyter",
+        link: 'https://cmsc320.github.io'
     },
     {
         code: 'CMSC 436',
@@ -40,7 +44,8 @@ const data =[
         power, memory and CPU speed; and new input modalities, where handheld systems differ substantially from non-handheld systems, and \
         thus require special programming tools and approaches. Students will apply these concepts and principles in the context of an \
         existing handset programming platform.",
-        concepts: "Android Studio, Kotlin, Firebase"
+        concepts: "Android Studio, Kotlin, Firebase",
+        link: 'http://www.cs.umd.edu/class/fall2020/cmsc436/'
     },
     {
         code: 'CMSC 435',
@@ -50,17 +55,8 @@ const data =[
         techniques covered. Structured design, structured programming, top-down design and development, segmentation and \
         modularization techniques, iterative enhancement, design and code inspection techniques, correctness, and chief-programmer \
         teams. The development of a large software project.",
-        concepts: "Javascript, CSS, React, Python, electron, HTML"
-    },
-    {
-        code: 'CMSC 424',
-        name: "Database Design",
-        term: "UMD Fall 2019",
-        summary: "Students are introduced to database systems and motivates the database approach as a \
-        mechanism for modeling the real world. An in-depth coverage of the relational model, logical database design, \
-        query languages, and other database concepts including query optimization, concurrency control; transaction management, \
-        and log based crash recovery. Distributed and Web database architectures are also discussed.",
-        concepts: "Postgress, C, linux"
+        concepts: "Javascript, CSS, React, Python, electron, HTML",
+        link:'https://seam.cs.umd.edu/purtilo/435/'
     },
     {
         code: 'CMSC 420',
@@ -72,11 +68,24 @@ const data =[
         concepts: "jAVA"
     },
     {
+        code: 'CMSC 424',
+        name: "Database Design",
+        term: "UMD Fall 2019",
+        summary: "Students are introduced to database systems and motivates the database approach as a \
+        mechanism for modeling the real world. An in-depth coverage of the relational model, logical database design, \
+        query languages, and other database concepts including query optimization, concurrency control; transaction management, \
+        and log based crash recovery. Distributed and Web database architectures are also discussed.",
+        concepts: "Postgress, C, linux",
+        link:'https://sedna.cs.umd.edu/424/'
+    },
+   
+    {
         code: 'CMSC 351',
         name: "Algorithms",
         term: "UMD Spring 2019",
         summary: "A systematic study of the complexity of some elementary algorithms related to sorting, \
         graphs and trees, and combinatorics. Algorithms are analyzed using mathematical techniques to solve recurrences and summations.",
+        link:'http://www.cs.umd.edu/class/spring2019/cmsc351-02010301/'
     },
     {
         code: 'CMSC 330',
@@ -87,7 +96,8 @@ const data =[
         , and memory safe systems programming. Explores language features such as formal syntax, scoping \
             and binding of variables, higher-order programming, typing, and type polymorphism. Introduces finite automata, context \
             free grammar, parsing, lambda calculus, and basics of security attacks and software security.",
-        concepts: "Ocaml, Ruby, Rust"
+        concepts: "Ocaml, Ruby, Rust",
+        link:'http://www.cs.umd.edu/class/fall2018/cmsc330/'
     },
    
    
@@ -99,7 +109,8 @@ const data =[
         relations, functions, and propositional logic. Introduction to other techniques, \
         modeling and solving problems in computer science. Introduction to permutations, combinations, \
         graphs, and trees with selected applications.",
-        concepts: ""
+        concepts: "",
+        link:'https://umd.instructure.com/courses/1237260/assignments/syllabus'
     },
 
     {
@@ -110,7 +121,8 @@ const data =[
         Major topics include C programming, introductory systems programming, and assembly language. \
         Other concepts covered include UNIX, machine data representation, thread management, optimization, and virtual memory. \
         Programming is done in the Linux Environment.",
-        concepts: "C, Assembly, Linux, MobaXterm(remote SSH)"
+        concepts: "C, Assembly, Linux, MobaXterm(remote SSH)",
+        link: 'http://www.cs.umd.edu/class/fall2018/cmsc216/syllabus.pdf',
     },
 
     {
@@ -121,7 +133,8 @@ const data =[
         Design, build, test, and debug medium -size software systems and learn to use relevant tools. \
         Use object-oriented methods to create effective and efficient problem solutions. \
         Use and implement application programming interfaces (APIs). Programming done in Java",
-        concepts: "Java, Eclipse IDE"
+        concepts: "Java, Eclipse IDE",
+        link:'https://www.cs.umd.edu/class/spring2018/cmsc132-010XH/syllabus.pdf'
     },
 
     {
@@ -132,7 +145,8 @@ const data =[
         Emphasizes understanding and implementation of applications using object- oriented techniques. \
         Develops skills such as program design and testing as well as implementation of programs using a graphical IDE. \
         Programming done in Java.",
-        concepts: "Java, Eclipse IDE"
+        concepts: "Java, Eclipse IDE",
+        link: 'http://www.cs.umd.edu/class/fall2017/cmsc131-010X/syllabus.shtml',
     },
      
 ]
@@ -148,30 +162,21 @@ function Courses() {
     })
     return (
         <Box backgroundColor='re' width='100%'  overflow='auto' display='flex' justifyContent='center' my={1} p={1}>
-            {/* <Grid container rowSpacing={2} p={1} alignItems='center' columnSpacing={{xs:0, sm:2}} backgroundColor='blu' justifyContent='center' maxWidth='90rem' flexWrap='wrap'>
-            {data.map(item =>
-                <Grid item width={{xs:1, sm:6/12, md:6/12, lg:4/12, xl:3/12}}>
-                    <Paper elevation='3' component={Stack} spacing={2} maxHeight={480}  sx={{p:1, borderRadius:'0.5rem'}} >
-                        <Stack direction='row' justifyContent='space-between'> 
-                            <Typography>{item.code}</Typography>
-                            <Typography>{item.term}</Typography>
-                        </Stack>
-                        <Typography textAlign='center' fontSize='1.2rem' fontWeight='500' color={teal[900]}>{item.name}</Typography>
-                        <Typography textAlign='center' color={indigo[900]}>{item.summary}</Typography>
-                        <Typography textAlign='center' color={deepOrange[900]} >{item.concepts}</Typography>
-                    </Paper>
-                </Grid>
-                )}
-            </Grid> */}
             <Box width='90%'>
             <ResponsiveMasonry
              columnsCountBreakPoints={{ 1:masonWidth}}>
                  <Masonry>
                  {data.map(item =>
                     <Paper  elevation='3' m={1} component={Stack} maxWidth={352} spacing={2}  sx={{p:1, borderRadius:'0.5rem'}} >
-                        <Stack direction='row' justifyContent='space-between'> 
+                        <Stack direction='row' justifyContent='space-between' alignItems='center'> 
                             <Typography>{item.code}</Typography>
                             <Typography>{item.term}</Typography>
+                            {!!item.link && 
+                            <IconButton component='a' sx={{backgroundColor:teal[50], ':hover':{backgroundColor:teal[200]}}}
+                                href={item.link} target='_blank'>
+                                <NearMeIcon sx={{color:indigo[500]}}/>
+                                </IconButton>
+                            }
                         </Stack>
                         <Typography textAlign='center' fontSize='1.2rem' fontWeight='500' color={teal[900]}>{item.name}</Typography>
                         <Typography textAlign='center' color={indigo[900]}>{item.summary}</Typography>

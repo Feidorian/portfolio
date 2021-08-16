@@ -9,7 +9,11 @@ function MetaData() {
             <Box>
                 <Typography fontSize='1.6rem' fontWeight='500' color='#1A237E' textAlign='center'>About</Typography>
                 <Typography textAlign='center'>
-                    This website was developed as a react Application, built and deployed through github pages, and routed to the above domain url.
+                    This website was developed as a react Application, built and deployed through github pages, and routed to the above domain: 
+                    <Box component='span' color='green'> feidorian.dev.</Box> 
+                </Typography>
+                <Typography textAlign='center'>
+                    The CSS implementation consists mostly of Material UI Components, with a few instances of  React-Bootstrap and Vanilla CSS.
                 </Typography>
             </Box>
 

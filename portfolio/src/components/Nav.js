@@ -15,8 +15,8 @@ const tabList = [
     { icon: 'user', title: 'AboutMe', badgeCount: 0, link: Paths.aboutMe },
     { icon: 'school', title: 'Education', badgeCount: 4, link: Paths.education },
     { icon: 'network-wired', title: 'Projects', badgeCount: 1, link: Paths.projects },
-    { icon: 'code', title: 'Skills', badgeCount: '15', link: Paths.skills },
-    { icon: 'book', title: 'Courses', badgeCount: 4, link: Paths.courses },
+    { icon: 'code', title: 'Skills', badgeCount: '40', link: Paths.skills },
+    { icon: 'book', title: 'Courses', badgeCount: '13', link: Paths.courses },
     { icon: 'briefcase', title: 'Work History', badgeCount: '1', link: Paths.workHistory },
     { icon: 'file', title: 'Resume', badgeCount: '1', link: Paths.resume },
     { icon: 'info', title: 'MetaData', link: Paths.metadata }

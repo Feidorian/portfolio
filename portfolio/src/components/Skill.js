@@ -115,10 +115,10 @@ export const data = [
     { data: [] },
     {
         category: "Database Language & Frameworks", color: green[700], data: [
-            { item: "mongodb", icon:Mongodb },
+            { item: "MongoDB", icon:Mongodb },
             { item: "MySql", icon:MySql},
             { item: "PostgreSql", icon:PostgreSql},
-            { item: "firebase", icon:Firebase },
+            { item: "Firebase", icon:Firebase },
         ]
     }
 ];
