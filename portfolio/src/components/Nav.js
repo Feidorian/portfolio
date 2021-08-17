@@ -1,6 +1,5 @@
-import { AppBar, Avatar, Badge, Button, Card, Grid, Icon, IconButton, InputAdornment, InputBase, Menu, MenuItem, Paper, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Avatar, Badge, Card, Grid, Icon, IconButton,Paper, Toolbar, Typography } from "@material-ui/core";
 import { Link, useLocation } from 'react-router-dom';
-import {useState} from 'react';
 import { Box } from "@material-ui/system";
 import wsb from '../images/wsb.png';
 import generator from "element-id-generator";
@@ -9,7 +8,7 @@ import { indigo} from '@material-ui/core/colors';
 import {Paths} from "./utils";
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
 
 const tabList = [
     { icon: 'user', title: 'AboutMe', badgeCount: 0, link: Paths.aboutMe },
@@ -78,9 +77,9 @@ function Nav() {
                             </Stack>
 
                             <Stack direction='row' alignItems='center'>
-                                <IconButton component='a'  href='https://github.com/Feidorian' target='_blank' >
+                                {/* <IconButton component='a'  href='https://github.com/Feidorian' target='_blank' >
                                     <GitHubIcon sx={{color:'white', fontSize:'1.8rem', ':hover':{fontSize:'2rem'}}}/>
-                                    </IconButton>
+                                    </IconButton> */}
                                 <IconButton component='a' href="https://www.linkedin.com/in/brian-ojoh-mile-a5a7b9154/" target='_blank'>
                                     <LinkedInIcon sx={{color:'white',fontSize:'2.1rem', ':hover':{fontSize:'2.4rem'}}}/>
                                     </IconButton>
