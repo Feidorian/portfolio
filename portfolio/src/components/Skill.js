@@ -6,7 +6,7 @@ function Skills() {
 
     const sortFunc = (a, b) => a.item === b.item ? 0 : a.item < b.item ? -1 : 1;
     return (
-        <Box backgroundColor='re' sx={{ overflowY: 'auto', p: 1 }}>
+        <Box sx={{ overflowY: 'auto', p: 1 }}>
             <Box maxWidth='70rem' mx='auto' backgroundColor='blu'>
                 <Masonry style={{ display: 'flex' }} breakpointCols={{ default: 3, 500: 1, 800: 2 }}>
                     {data.map(item =>
@@ -30,6 +30,5 @@ function Skills() {
             </Box>
         </Box>
     )
-}
-
+};
 export default Skills;
