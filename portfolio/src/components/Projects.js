@@ -2,15 +2,16 @@ import {Box, Card, CardContent, CardHeader, CardMedia, CardActions, Grid, Typogr
 import { teal, indigo } from "@material-ui/core/colors"
 import { Carousel } from "react-bootstrap";
 import projects from "../data/projects";
+import Masonry from 'react-masonry-css';
 
 const ImageSlider = ({ list }) => (
     <Carousel fade>
         {list.map(image =>
-            <Carousel.Item  interval={500000}>
-                <Box height={320} >
+            <Carousel.Item interval={1000} >
+                <Box height={320}>
                     <Box  sx={{backgroundImage:`url('${image}')`,  height: '100%', width:'100%', position:'absolute', zIndex:'-1',  filter:'blur(25px)'}} />
-                    {/* 364 X 345px  */}
-                    <Icon component='img' src={image} sx={{objectFit: 'contain', width: '100%', height: '100%'}} />
+                    {/* 360 X 320px  */}
+                    <Box component='img' p={3} src={image} sx={{objectFit: 'contain', width: '100%', height: '100%'}} />
                     </Box>
                 
             </Carousel.Item>
