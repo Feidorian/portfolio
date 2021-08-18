@@ -4,10 +4,10 @@ import { Carousel } from "react-bootstrap";
 import projects from "../data/projects";
 
 const ImageSlider = ({ list }) => (
-    <Carousel fade >
+    <Carousel fade>
         {list.map(image =>
-            <Carousel.Item style={{ borderRadius: '0.6rem' }}>
-                <Box sx={{ backgroundImage: `url(${image})`, backgroundSize: 'fill', display: 'flex', alignItems: 'center',  height: '350px', borderRadius: '0.6rem' }}>
+            <Carousel.Item style={{ borderRadius: '0.6rem' }} interval={500000}>
+                <Box sx={{ backgroundImage: `url(${image})`, backgroundSize: 'fill', display: 'flex', alignItems: 'center',  height: '320px', borderRadius: '0.6rem' }}>
                     {/* 364 X 345px  */}
                     <Icon component='img' src={image} sx={{
                         objectFit: 'contain', width: '100%', height: '100%', backdropFilter: 'blur(15px)', borderRadius: '0.9rem'
