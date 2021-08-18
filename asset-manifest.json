@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.d73f4e09.chunk.css",
-    "main.js": "/static/js/main.bdfd251f.chunk.js",
-    "main.js.map": "/static/js/main.bdfd251f.chunk.js.map",
+    "main.js": "/static/js/main.3918648c.chunk.js",
+    "main.js.map": "/static/js/main.3918648c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.8cd73353.js",
     "runtime-main.js.map": "/static/js/runtime-main.8cd73353.js.map",
     "static/css/2.4be38407.chunk.css": "/static/css/2.4be38407.chunk.css",
@@ -14,9 +14,9 @@
     "static/css/2.4be38407.chunk.css.map": "/static/css/2.4be38407.chunk.css.map",
     "static/css/main.d73f4e09.chunk.css.map": "/static/css/main.d73f4e09.chunk.css.map",
     "static/js/2.1fa1a76f.chunk.js.LICENSE.txt": "/static/js/2.1fa1a76f.chunk.js.LICENSE.txt",
-    "static/media/0.png": "/static/media/0.ffda5162.png",
+    "static/media/0.png": "/static/media/0.eb710430.png",
     "static/media/1.png": "/static/media/1.e7b535b6.png",
-    "static/media/2.png": "/static/media/2.eb710430.png",
+    "static/media/2.png": "/static/media/2.ffda5162.png",
     "static/media/3.png": "/static/media/3.ed233915.png",
     "static/media/amazonwebservices-original.be3450a3.svg": "/static/media/amazonwebservices-original.be3450a3.svg",
     "static/media/android-plain.112d7863.svg": "/static/media/android-plain.112d7863.svg",
@@ -84,6 +84,6 @@
     "static/css/2.4be38407.chunk.css",
     "static/js/2.1fa1a76f.chunk.js",
     "static/css/main.d73f4e09.chunk.css",
-    "static/js/main.bdfd251f.chunk.js"
+    "static/js/main.3918648c.chunk.js"
   ]
 }
