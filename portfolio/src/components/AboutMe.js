@@ -26,7 +26,7 @@ function AboutMe() {
                     </Box>
                     {/* general info card  */}
                     <Box p={0.5}>
-                        <Paper component={Box} elevvation={3} p={2} maxWidth='30rem' mx='auto'>
+                        <Paper component={Box} elevation={3} p={2} maxWidth='30rem' mx='auto'>
                             <Stack spacing={2}>
                                 {generalInfo.map((item, index) =>
                                     <>

@@ -8,7 +8,7 @@ import { ReactComponent as Creativity } from "../images/design-thinking.svg";
 import { ReactComponent as VisualThinking } from "../images/storyboard.svg";
 import { ReactComponent as WorkEthic } from "../images/struggle.svg";
 import { ReactComponent as Enthusiasm } from "../images/business.svg";
-import { ReactComponent as Organization } from "../images/project-plan.svg";
+import { ReactComponent as Organization } from "../images/project-plan.svg"; 
 import { ReactComponent as Python } from "../images/python-plain.svg";
 import { ReactComponent as HTML } from "../images/html5-plain.svg";
 import { ReactComponent as JavaScript } from "../images/javascript-plain.svg";
@@ -32,7 +32,7 @@ import { ReactComponent as JQuery } from "../images/jquery-plain.svg";
 import { ReactComponent as Jupyter } from "../images/jupyter-plain.svg";
 import { ReactComponent as VSCode } from "../images/vscode-plain.svg";
 import { ReactComponent as PYCharm } from "../images/pycharm-plain.svg";
-import { ReactComponent as Intellij } from "../images/intellij-plain.svg";
+import { ReactComponent as IntelliJ } from "../images/intellij-plain.svg";
 import { ReactComponent as Android } from "../images/android-plain.svg";
 import { ReactComponent as Mongodb } from "../images/mongodb-plain.svg";
 import { ReactComponent as MySql } from "../images/mysql-plain.svg";
@@ -107,7 +107,7 @@ export const data = [
             { item: "Jupyter", icon: Jupyter },
             { item: "VSCode", icon: VSCode },
             { item: "PyCharm", icon: PYCharm },
-            { item: "IntelliJ", icon: Intellij },
+            { item: "IntelliJ", icon: IntelliJ },
             { item: "Android Studio", icon: Android },
         ]
     },

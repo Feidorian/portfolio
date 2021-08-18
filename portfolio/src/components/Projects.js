@@ -6,13 +6,13 @@ import projects from "../data/projects";
 const ImageSlider = ({ list }) => (
     <Carousel fade>
         {list.map(image =>
-            <Carousel.Item style={{ borderRadius: '0.6rem' }} interval={500000}>
-                <Box sx={{ backgroundImage: `url(${image})`, backgroundSize: 'fill', display: 'flex', alignItems: 'center',  height: '320px', borderRadius: '0.6rem' }}>
+            <Carousel.Item  interval={500000}>
+                <Box height={320} >
+                    <Box  sx={{backgroundImage:`url('${image}')`,  height: '100%', width:'100%', position:'absolute', zIndex:'-1',  filter:'blur(25px)'}} />
                     {/* 364 X 345px  */}
-                    <Icon component='img' src={image} sx={{
-                        objectFit: 'contain', width: '100%', height: '100%', backdropFilter: 'blur(15px)', borderRadius: '0.9rem'
-                    }} />
-                </Box>
+                    <Icon component='img' src={image} sx={{objectFit: 'contain', width: '100%', height: '100%'}} />
+                    </Box>
+                
             </Carousel.Item>
         )}
     </Carousel>
@@ -35,7 +35,7 @@ function Projects() {
                                         {item.linkIcon}
                                     </IconButton>
                                 } />
-                            <CardMedia><ImageSlider list={item.images} /></CardMedia>
+                            <CardMedia ><ImageSlider list={item.images} /></CardMedia>
                             <CardContent>
                                 <Typography variant="body2" color="text.secondary" textAlign='center'>{item.summary}</Typography>
                             </CardContent>

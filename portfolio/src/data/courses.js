@@ -13,9 +13,9 @@ const data = [
         'name': "A Introduction to PHP and Javascript",
         'term': "UMD Spring 2021",
         'summary': "An introduction to the development of single page Web-based applications (SPA's) using JavaScript \
-                for both the front end client and back-end api/service. We will be devleoping applications using a micro-service \
+                for both the front end client and back-end api/service. We will be developing applications using a micro-service \
                 architecture pattern and discussing throughout the evolution of web application architectures and current trends.",
-        'concepts': "HTML, CSS, Javascript, Node.js, React, Boostrap, express",
+        'concepts': "HTML, CSS, Javascript, Node.js, React, Bootstrap, express",
         'link':'https://egonzal5.github.io/389N'
     },
     {

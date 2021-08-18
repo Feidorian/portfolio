@@ -22,12 +22,11 @@ const projects = [
             <br/><br/>
             The app was developed as a React Application, built & deployed through github pages, and then routed to its residing domain url.
             <br/><br/>
-            The app is fully responsive, with a mobile-first UI designed to be intuitive, easily navigable & asthetic.
+            The app is fully responsive, with a mobile-first UI designed to be intuitive, easily navigable & aesthetic.
             <br/><br/>
             The CSS implementation consists mostly of Material UI Components, with a few instances of React-Bootstrap and Vanilla CSS.
         </span>,
-        images: []
-            ,
+        images: [],
         keywords: [,'React', 'JavaScript', 'HTML', 'CSS', 'Material UI', 'React BootStrap', 'React Router', 'Github Pages']
 
     },
@@ -57,8 +56,8 @@ const projects = [
         link: "https://rottentomatoes.feidorian.dev",
         summary: 
         <span>
-            What are movie critics? Are they still needed in an ever increaing information-abundant society? Are they strong predictors of movie viewer choices? 
-            This data analysis projects uses machine learning to hypothesis the importance of Rotten Tomatoes movie critics as predictors of the site's audience ratings.  
+            What are movie critics? Are they still needed in an ever increasing information-abundant society? Are they strong predictors of movie viewer choices? 
+            This data analysis projects uses machine learning to hypothesis on the importance of Rotten Tomatoes movie critics as predictors of the site's audience ratings.  
         </span>,
         images: [0].map(i => require(`../images/rottentomatoes/${i}.png`).default)
             ,

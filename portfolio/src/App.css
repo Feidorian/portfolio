@@ -19,3 +19,7 @@
   66%  {color: blue; color: yellow;}
   100% {color: red; color: cyan;}
 }
+
+.rounded {
+  border-radius: 100px !important;
+}
