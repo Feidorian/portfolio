@@ -1,4 +1,4 @@
-import {Box, Grid, Icon, Paper, Stack, Typography, Divider, Chip} from "@material-ui/core";
+import { Box, Grid, Icon, Paper, Stack, Typography, Divider, Chip } from "@material-ui/core";
 import Masonry from 'react-masonry-css';
 import avatar from "../images/profilePic.jpg";
 import { red, indigo, teal } from '@material-ui/core/colors';
@@ -8,9 +8,9 @@ import { profile, generalInfo, personalQuote, background, interests, Hobbies } f
 function AboutMe() {
     return (
         <Box overflow='auto' >
-            <Box sx={{maxWidth: '60rem', mx: 'auto' }}>
+            <Box sx={{ maxWidth: '60rem', mx: 'auto' }}>
 
-                <Masonry breakpointCols={{ default: 2, 816: 1 }} style={{display: 'flex' }}>
+                <Masonry breakpointCols={{ default: 2, 816: 1 }} style={{ display: 'flex' }}>
                     {/* profile card  */}
                     <Box p={0.5}>
                         <Paper component={Box} elevation={3} mx='auto' p={1} maxWidth='25rem' sx={{ borderRadius: '0.5rem', flexGrow: 0.2 }}>

@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
-import { Box, Stack } from '@material-ui/core';
+import {Stack } from '@material-ui/core';
 import { use100vh } from 'react-div-100vh';
 import Nav from './components/Nav';
 import wallpaper from "./images/wallpaper.png";

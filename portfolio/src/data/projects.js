@@ -14,7 +14,7 @@ const projects = [
         link: "https://feidorian.dev",
         summary: 
         <span>
-            Portfolio (feidorian.dev) is a publicly-hosted web-app designed to share employment-relevant information about myself, in addition to serving as a proof of concept of my abilities.
+            Portfolio (feidorian.dev) is a publicly-hosted web-app designed to share employment-relevant information about myself, in addition to serving as  proof of concept of my abilities.
             <br/><br/>
             The app was developed as a React Application, built & deployed through github pages, and then routed to its residing domain url.
             <br/><br/>
@@ -32,6 +32,19 @@ const projects = [
         icon: <Avatar sx={{ bgcolor: red[500] }}>API</Avatar>,
         linkIcon:<NearMeIcon sx={{ color: indigo[500], fontSize: '2rem' }} />,
         title: <Typography color='success.dark'>API Weather App</Typography>,
+        subtitle: <Typography fontSize='0.9rem' sx={{ textDecoration: 'underline' }}>APIWeatherApp.feidorian.dev</Typography>,
+        link: "https://apiweatherapp.feidorian.dev",
+        summary: "API Weather APP is a functional live weather application built on a backend powered by the Google Places, AWS Lambda, and Open Weather API's.",
+        images: [0,1,2,3].map(i => require(`../images/apiweatherapp/${i}.png`).default)
+            ,
+        keywords: ['React', 'Material UI', 'JavaScript', 'HTML', 'CSS', 'React Bootstrap', 'Google Places API', 'OpenWeather API', 'AWS Lambda']
+
+    },
+
+    {
+        icon: <Avatar sx={{ bgcolor: red[500] }}>API</Avatar>,
+        linkIcon:<NearMeIcon sx={{ color: indigo[500], fontSize: '2rem' }} />,
+        title: <Typography color='success.dark'>Rotten Tomatoes Analysis</Typography>,
         subtitle: <Typography fontSize='0.9rem' sx={{ textDecoration: 'underline' }}>APIWeatherApp.feidorian.dev</Typography>,
         link: "https://apiweatherapp.feidorian.dev",
         summary: "API Weather APP is a functional live weather application built on a backend powered by the Google Places, AWS Lambda, and Open Weather API's.",

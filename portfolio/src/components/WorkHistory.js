@@ -1,8 +1,8 @@
 import { Box, Icon, Paper, Stack, Typography } from "@material-ui/core";
-import {Timeline, TimelineConnector, TimelineContent, TimelineItem, TimelineOppositeContent, TimelineSeparator} from '@material-ui/lab';
+import {Timeline, TimelineConnector, TimelineContent, TimelineItem, TimelineSeparator} from '@material-ui/lab';
 import Cart from '../images/trolley.svg';
 import Shoppers from "../images/shoppers.png";
-import { indigo, pink, teal, red, green, deepOrange, deepPurple, grey } from '@material-ui/core/colors';
+import { indigo, teal, red, grey } from '@material-ui/core/colors';
 
 function WorkHistory() {
     return (
