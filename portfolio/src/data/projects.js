@@ -1,5 +1,5 @@
 import {Avatar, Typography, Icon} from '@material-ui/core';
-import {red, indigo} from '@material-ui/core/colors';
+import {red, indigo, purple} from '@material-ui/core/colors';
 import {ReactComponent as WebDevelopment} from "../images/web-programming.svg";
 import NearMeIcon from '@material-ui/icons/NearMe';
 import ArrowCircleDownIcon from '@material-ui/icons/ArrowCircleDown';
@@ -10,7 +10,7 @@ const projects = [
 
     // this portfolio
     {
-        icon: <Avatar sx={{ bgcolor: 'transparent', width:'3rem', height:'3rem'}}><WebDevelopment style={{fill:red[900], backgroundColor:red[50], margin:6}}/></Avatar>,
+        icon: <Avatar sx={{ bgcolor: 'transparent', width:'3rem', height:'3rem'}}><WebDevelopment style={{fill:indigo[900], backgroundColor:indigo[50], margin:6}}/></Avatar>,
         //</Avatar><Avatar sx={{bgcolor:indigo[50], width:'3rem', height:'3rem'}}><WebDevelopment style={{padding:6}}/></Avatar>
         linkIcon:<ArrowCircleDownIcon sx={{ color: indigo[500], fontSize: '2rem' }} />,
         title: <Typography color='success.dark' textAlign='center'>Portfolio</Typography>,
@@ -49,10 +49,28 @@ const projects = [
     // Rotten tomatoes analysis
 
     {
-        icon: <Avatar sx={{bgColor:'transparent'}}><DatScienceIcon style={{backgroundColor:indigo[50], fill:indigo[900]}}/></Avatar>,
+        icon: <Avatar sx={{bgColor:'transparent'}}><DatScienceIcon style={{backgroundColor:purple[50], fill:purple[900]}}/></Avatar>,
         linkIcon:<NearMeIcon sx={{ color: indigo[500], fontSize: '2rem' }} />,
         title: <Typography color='success.dark'>Rotten Tomatoes Analysis</Typography>,
         subtitle: <Typography fontSize='0.9rem' sx={{ textDecoration: 'underline' }}>rottentomatoes.feidorian.dev</Typography>,
+        link: "https://rottentomatoes.feidorian.dev",
+        summary: 
+        <span>
+            What are movie critics? Are they still needed in an ever increasing information-abundant society? Are they strong predictors of movie viewer choices? 
+            This data analysis projects uses machine learning to hypothesis on the importance of Rotten Tomatoes movie critics as predictors of the site's audience ratings.  
+        </span>,
+        images: [0].map(i => require(`../images/rottentomatoes/${i}.png`).default)
+            ,
+        keywords: ['Machine Learning', 'Data Science', 'Bootstrap', 'Kaggle Jupyter Env', 'JavaScript', 'HTML', 'CSS']
+
+    },
+
+    
+    {
+        icon: <Avatar sx={{bgColor:'transparent'}}><DatScienceIcon style={{backgroundColor:purple[50], fill:purple[900]}}/></Avatar>,
+        linkIcon:<NearMeIcon sx={{ color: indigo[500], fontSize: '2rem' }} />,
+        title: <Typography color='success.dark'>Kind Words</Typography>,
+        subtitle: <Typography fontSize='0.9rem' sx={{ textDecoration: 'underline' }}>Android Application</Typography>,
         link: "https://rottentomatoes.feidorian.dev",
         summary: 
         <span>
