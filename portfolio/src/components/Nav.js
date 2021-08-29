@@ -77,9 +77,9 @@ function Nav() {
                             </Stack>
 
                             <Stack direction='row' alignItems='center'>
-                                {/* <IconButton component='a'  href='https://github.com/Feidorian' target='_blank' >
+                                <IconButton component='a'  href='https://github.com/Feidorian' target='_blank' >
                                     <GitHubIcon sx={{color:'white', fontSize:'1.8rem', ':hover':{fontSize:'2rem'}}}/>
-                                    </IconButton> */}
+                                    </IconButton>
                                 <IconButton component='a' href="https://www.linkedin.com/in/brian-ojoh-mile-a5a7b9154/" target='_blank'>
                                     <LinkedInIcon sx={{color:'white',fontSize:'2.1rem', ':hover':{fontSize:'2.4rem'}}}/>
                                     </IconButton>
@@ -89,7 +89,7 @@ function Nav() {
                     </Grid>
 
                     {/* tab bar  */}
-                    <Grid item container sx={{ p: '1rem' }} xs={12}
+                    <Grid item container sx={{ pt: '1rem', pb:'0.5rem' }} xs={12}
                         justifyContent='center' alignItems='center' spacing={1}>
                         {tabList.map(item => <TabItem key={generator.generate()} data={item} />)}
                     </Grid>

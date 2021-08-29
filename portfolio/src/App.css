@@ -20,6 +20,20 @@
   100% {color: red; color: cyan;}
 }
 
-.rounded {
-  border-radius: 100px !important;
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: 3rem;
+  border: 1px solid #d5d5d5;
 }
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  border-radius: 3rem;
+  background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: #b0b0b0;
+  border-radius: 3rem;
+} 
