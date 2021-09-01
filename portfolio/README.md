@@ -1,0 +1,3 @@
+<h1 align='center'>Portfolio</h1>
+<p>Portfolio (feidorian.dev) is a publicly-hosted web-app designed to share employment-relevant information about myself, in addition to serving as  proof of concept of my abilities.</p>
+<p> The app was developed as a React Application, built & deployed through github pages, and then routed to its residing domain url. The CSS implementation consists mostly of Material UI Components, with a few instances of React-Bootstrap and Vanilla CSS.</p>

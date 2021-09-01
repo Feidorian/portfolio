@@ -28,14 +28,14 @@ const projects = [
         type: 'web',
         location: 'internal',
         links: [
-            {label:'Demo Page', link:''},
-            { label: 'Source Code', link: '' }
+            { label: 'Demo Page', link: 'https://feidorian.dev' },
+            { label: 'Source Code', link: 'https://github.com/Feidorian/portfolio/tree/master/portfolio' }
         ],
         title: 'My Portfolio',
         status: 'Completed',
-        images: [],
+        images: [0, 1, 2, 3, 4, 5, 6].map(i => require(`../images/portfolio/${i}.JPG`).default),
         summary: [
-            " Portfolio (feidorian.dev) is a publicly-hosted web-app designed to share employment-relevant information about myself, in addition to serving as  proof of concept of my abilities."
+            "Portfolio (feidorian.dev) is a publicly-hosted web-app designed to share employment-relevant information about myself, in addition to serving as  proof of concept of my abilities."
         ],
         expandedSummary: [
             "The app was developed as a React Application, built & deployed through github pages, and then routed to its residing domain url.",
@@ -48,8 +48,8 @@ const projects = [
         type: 'api',
         location: 'external',
         links: [
-            { label: 'Demo Page', link: '' },
-            { label: 'Source Code', link: '' }
+            { label: 'Demo Page', link: 'https://apiweatherapp.feidorian.dev' },
+            { label: 'Source Code', link: 'https://github.com/Feidorian/api-weather-app/tree/main/apiweatherapp/apiweatherapp' }
         ],
         title: 'API Weather App',
         status: 'Completed',
@@ -65,7 +65,7 @@ const projects = [
         type: 'dataScience',
         location: 'external',
         links: [
-            { label: 'Demo Page', link: '' }
+            { label: 'Demo Page', link: 'https://rottentomatoes.feidorian.dev' }
         ],
         title: 'Rotten Tomatoes Analysis',
         status: 'Completed',
@@ -83,16 +83,20 @@ const projects = [
         type: 'android',
         location: 'external',
         links: [
-            { label: 'Source Code', link: '' }
+            { label: 'APK File', link: 'https://github.com/Kindwords/kindwordsapp/blob/main/apk/KindWords.apk' },
+            { label: 'Source Code (zip)', link: 'https://github.com/Kindwords/kindwordsapp' }
         ],
         title: 'Kind Words App',
         status: 'Completed',
         images: [0, 1, 2, 3, 4].map(i => require(`../images/kindwords/${i}.png`).default),
         summary: [
-            " Kind Words is an anonymous letter exchange android application that lets users write anonymous letters expressing their struggles, covid related-fears, etc."
+            "KindWords is an anonymous letter exchange app that lets users write anonymous letters expressing their struggles, fears and words of encouragement during the COVID Pandemic."
         ],
         expandedSummary: [
-            "Other users can view and respond to such letters with positive messages/replies. Users who abuse the system by posting offensive letters/replies can be reported through a report ticket, submitted to the database. Admins of the app can then look at the contents of the report and decide to take action."
+            "KindWords was created as a final project for the University of Maryland Course: Programming of Handheld Devices (CMSC 436).",
+            "Its primary feautures include the ability to:",
+            "* Publicly post anonymous cards (letters) that can be replied to by other users of the app",
+            "* Report users who post offensive content"
         ],
         keywords: ['Android Application', 'Kotlin', 'Android Studio']
     }

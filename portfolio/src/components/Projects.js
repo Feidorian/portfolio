@@ -17,6 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 
+// return icon that matches a project type 
 const ProjectType = ({ type }) => {
     const DataScienceProjectIcon = () => (
         <Avatar sx={{ bgcolor: 'transparent', width: '3rem', p: 1 }}>
@@ -25,8 +26,8 @@ const ProjectType = ({ type }) => {
     );
     const AndroidProjectIcon = () => (
         <Avatar sx={{ bgcolor: 'transparent', width: '3rem', p: 1 }}>
-        <Android style={{ fill: indigo[900], backgroundColor: indigo[50], height: '3rem' }} />
-    </Avatar>
+            <Android style={{ fill: indigo[900], backgroundColor: indigo[50], height: '3rem' }} />
+        </Avatar>
     );
     const WebProjectIcon = () => (
         <Avatar sx={{ bgcolor: 'transparent', width: '3rem', p: 1 }}>
@@ -53,6 +54,7 @@ const ProjectType = ({ type }) => {
     }
 }
 
+// return a slider for each projects images 
 const ImageSlider = ({ list }) => (
     <Carousel fade interval={null}>
         {list.map(image =>
@@ -67,6 +69,8 @@ const ImageSlider = ({ list }) => (
     </Carousel>
 )
 
+// return a project's status 
+// Completed, Development, Planned
 const ProjectStatus = ({ status }) => {
     let color = () => {
         switch (status) {
@@ -79,6 +83,7 @@ const ProjectStatus = ({ status }) => {
     return <Typography ml={-1} textAlign='center' fontWeight='500' color={color}><Box component='span' color='success.main'>Status: </Box>Completed</Typography>
 };
 
+// return a menu and action button for accessing external links relevant to a project
 const CardLinksAction = ({ item, links }) => {
     const LinkIcon = ({ location }) => {
         if (location === 'internal') return <ArrowCircleDownIcon sx={{ color: indigo[500], fontSize: '2rem' }} />
@@ -88,12 +93,13 @@ const CardLinksAction = ({ item, links }) => {
         <Box sx={{ ':hover': { '& :nth-child(2)': { display: 'block' } } }}>
             <LinkIcon location={item.location} />
             <Box component={Paper} elevation={4} borderRadius='0.8rem' position='absolute' right='-18px' display='none' zIndex={1000}>
-                {links.map(item => <MenuItem component='a' href={item.link}><Typography mx='auto' fontWeight='500' color={teal[700]}>{item.label}</Typography></MenuItem>)}
+                {links.map(item => <MenuItem component='a' href={item.link} target='_blank' maxHeight='1rem'><Typography mx='auto' fontWeight='500' color={teal[700]}>{item.label}</Typography></MenuItem>)}
             </Box>
         </Box>
     )
 };
 
+// return a sumamry expand section for projects with very long descriptions 
 const ExpandedSummary = ({ data }) => {
     const [expanded, setExpanded] = useState(false);
     return (
@@ -109,79 +115,100 @@ const ExpandedSummary = ({ data }) => {
                     }
                 </Button>
             </Stack>
-            <Collapse in={expanded} timeout="auto" unmountOnExit sx={{ px: 3 }}>
+            <Collapse in={expanded} timeout="auto" unmountOnExit sx={{ px: 2 }}>
                 <Stack spacing={1}>
-                    {data.map(item => <Typography variant="body2" color="text.secondary" textAlign='center'>{item}</Typography>)}
+                    {data.map(item => <Typography variant="body2" color="text.secondary" >{item}</Typography>)}
                 </Stack>
             </Collapse>
         </>
     )
 }
 
+// sort & filter functions for ordering project cards 
 const sortAscending = (item1, item2) => item1.title < item2.title ? -1 : item1.title > item2.title ? 1 : 0
 const sortDescending = (item1, item2) => item1.title < item2.title ? 1 : item1.title > item2.title ? -1 : 0
 const filterStatus = (item, target) => item.status === target
 const filterType = (item, target) => item.type === target
 
+
+const sortProjects = (sortValue, projectList) => {
+    switch(sortValue) {
+        case '1':
+            return projectList.sort(sortAscending)
+        case '2':
+            return projectList.sort(sortDescending)
+        default:
+            return projectList
+    }
+}
+
+const filterProjects = (filterValue, projectList) => {
+    switch(filterValue) {
+        case '1':
+            return projectList.filter(x=>filterStatus(x, 'Completed'))
+        case '2':
+            return projectList.filter(x=>filterStatus(x, 'Development'))
+        case '3':
+            return projectList.filter(x=>filterStatus(x, 'Planned'))
+        case '4':
+            return projectList.filter(x=>filterType(x, 'web'))
+        case '5':
+            return projectList.filter(x=>filterType(x, 'api'))
+        case '6':
+            return projectList.filter(x=>filterType(x, 'dataScience'))
+        case '7':
+            return projectList.filter(x=>filterType(x, 'android'))
+
+        default:
+            return projectList
+    }
+}
+
+
+// function hub for manipualting project odering states 
 const reducer = (state, action) => {
-    let newProjectList;
     switch (action.type) {
         case 'setSort':
-            return {...state, sortValue:action.data}
+            return { ...state, sortValue: action.data }
         case 'setFilter':
-            return {...state, filterValue:action.data}
-        case 'sort':
-            newProjectList = () => {
-                switch (state.sortValue) {
-                    case '1': return [...projects].sort(sortAscending)
-                    case '2': return [...projects].sort(sortDescending)
-                    case '3': return [...projects]
-                    default: return state.projectList
-                }
-            };
-            return {...state, projectList: newProjectList() }
+            return { ...state, filterValue: action.data }
         case 'filter':
-            newProjectList = () => {
-                switch (state.filterValue) {
-                    case '1': return state.projectList.filter(item=>filterStatus(item, 'Completed'))
-                    case '2': return state.projectList.filter(item=>filterStatus(item, 'Development'))
-                    case '3': return state.projectList.filter(item=>filterStatus(item, 'Planned'))
-                    case '4': return state.projectList.filter(item=>filterType(item, 'web'))
-                    case '5': return state.projectList.filter(item=>filterType(item, 'api'))
-                    default: return state.projectList
-                }
-            };
-            return {...state, projectList: newProjectList() }
+            let projectList = sortProjects(state.sortValue, [...projects])
+            projectList = filterProjects(state.filterValue, [...projectList])
+            return {...state, projectList:projectList}
         default:
-            return state
+            return state         
     }
 };
+
+// initial project state 
 const initialState = {
-    projectList: [...projects].sort(sortAscending).filter(x=>filterStatus(x, 'Completed')),
-    sortValue: 0,
-    filterValue: 0
+    projectList: [...projects],
+    sortValue: 3,
+    filterValue: 1
 };
 
+
+// main function 
 function Projects() {
     const [projectsState, dispatcher] = useReducer(reducer, initialState);
-    
-    useEffect(()=> {
-        dispatcher({type:'sort'})
-        dispatcher({type:'filter'})
+    // re-order projects whenever the Sort Value or filterValue is changed 
+    useEffect(() => {
+        dispatcher({ type: 'filter' })
     }, [projectsState.sortValue, projectsState.filterValue])
 
     return (
         <Box overflow='auto' p={3} mb='0.5rem' >
             <Stack direction='row' spacing={1} justifyContent='center' marginBottom={2}>
                 <Box component='select' name='sortOption' borderRadius='0.4rem' backgroundColor='white' padding='0.2rem' color={teal[900]}
-                onChange={e=> dispatcher({type:'setSort', data:e.target.value})}>
+                    onChange={e => dispatcher({ type: 'setSort', data: e.target.value })}>
                     <Box component='option' value={0} disabled>Sort Projects By</Box>
-                    <Box component='option' value={1} selected>Ascending</Box>
+                    <Box component='option' value={1} >Ascending</Box>
                     <Box component='option' value={2}>Descending</Box>
-                    <Box component='option' value={3}>Suggested</Box>
+                    <Box component='option' value={3} selected>Suggested</Box>
                     {/* <Box component='option'>Python</Box> */}
                 </Box>
-                <Box component='select' name='sortOption' borderRadius='0.4rem' backgroundColor='white' padding='0.2rem' color={indigo[900]} onChange={e=> dispatcher({type:'setFilter', data:e.target.value})}>
+                <Box component='select' name='sortOption' borderRadius='0.4rem' backgroundColor='white' padding='0.2rem' color={indigo[900]} onChange={e => dispatcher({ type: 'setFilter', data: e.target.value })}>
                     <Box component='option' value={0} disabled>Filter Projects By</Box>
                     <Box component='option' value={1} selected>Completed</Box>
                     <Box component='option' value={2}>Development</Box>
@@ -193,7 +220,8 @@ function Projects() {
                 </Box>
             </Stack>
 
-            <Masonry style={{display:'flex'}} breakpointCols={{ default: 4, 1459: 3, 1101: 2, 725: 1 }}maxWidth='90rem' mx='auto' >
+            <Stack component={Masonry} direction='row' breakpointCols={{ default: 4, 1459: 3, 1101: 2, 725: 1 }} 
+                maxWidth={{sm:'60rem', md:'80rem', lg:'85rem', xl:'90rem'}} mx='auto' >
                 {projectsState.projectList.map(item =>
                     <Box p={1} position='relative' display='flex' justifyContent='center'>
                         <Card component={Paper} elevation={5} sx={{ borderRadius: '1rem', maxWidth: 360, minWidth: 330 }}>
@@ -230,7 +258,7 @@ function Projects() {
                         </Card>
                     </Box>
                 )}
-            </Masonry>
+            </Stack>
         </Box>
     )
 };

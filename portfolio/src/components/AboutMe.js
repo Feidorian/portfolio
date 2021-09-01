@@ -12,7 +12,7 @@ function AboutMe() {
 
                 <Masonry breakpointCols={{ default: 2, 816: 1 }} style={{ display: 'flex' }}>
                     {/* profile card  */}
-                    <Box p={0.5}>
+                    <Box p={1}>
                         <Paper component={Box} elevation={3} mx='auto' p={1} maxWidth='25rem' sx={{ borderRadius: '0.5rem', flexGrow: 0.2 }}>
                             <Stack direction='row'>
                                 <Box component='img' src={avatar} width='9rem' height='11rem' borderRadius='0.5rem' border='1px solid #d3d3d3' p={10 / 12} />
@@ -25,7 +25,7 @@ function AboutMe() {
                         </Paper>
                     </Box>
                     {/* general info card  */}
-                    <Box p={0.5}>
+                    <Box p={1}>
                         <Paper component={Box} elevation={3} p={2} maxWidth='30rem' mx='auto'>
                             <Stack spacing={2}>
                                 {generalInfo.map((item, index) =>
@@ -44,7 +44,7 @@ function AboutMe() {
                         </Paper>
                     </Box>
                     {/* Personal Quote  */}
-                    <Box p={0.5}>
+                    <Box p={1}>
                         <Paper component={Box} elevation={3} borderRadius='0.5rem' maxWidth='30rem' mx='auto' sx={{ backgroundColor: indigo[900], color: 'white' }}>
                             <Typography sx={{ textAlign: 'center', p: '0.4rem', fontStyle: 'italic' }}>{personalQuote}</Typography>
                         </Paper>
@@ -74,7 +74,7 @@ function AboutMe() {
                     </Box>
                     <Paper />
                     {/* Hobbies  */}
-                    <Box p={0.5}>
+                    <Box p={1}>
                         <Paper elevation={3} component={Stack} alignItems='center' p={1} elevation={2} maxWidth='30rem' mx='auto' sx={{ borderRadius: '0.5rem', backgroundColor: 'white' }}>
                             <Typography fontSize='1.3rem' fontWeight={500} color={red[900]}>{Hobbies.title}</Typography>
                             <Grid container justifyContent='center' spacing={1} flexWrap='wrap'>
