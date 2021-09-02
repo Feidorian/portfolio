@@ -106,8 +106,8 @@ const projects = [
         type: 'web',
         location: 'external',
         links: [
-            { label: 'Demo Page', link: '#' },
-            { label: 'Source Code', link: '#' }
+            // { label: 'Demo Page', link: '#' },
+            // { label: 'Source Code', link: '#' }
         ],
         title: 'Binary Tree Visualization',
         status: 'Development',
@@ -125,8 +125,8 @@ const projects = [
         type: 'web',
         location: 'external',
         links: [
-            { label: 'Demo Page', link: '#' },
-            { label: 'Source Code', link: '#' }
+            // { label: 'Demo Page', link: '#' },
+            // { label: 'Source Code', link: '#' }
         ],
         title: 'Descrete Event Simulator',
         status: 'Planned',
@@ -142,8 +142,8 @@ const projects = [
         type: 'web',
         location: 'external',
         links: [
-            { label: 'Demo Page', link: '#' },
-            { label: 'Source Code', link: '#' }
+            // { label: 'Demo Page', link: '#' },
+            // { label: 'Source Code', link: '#' }
         ],
         title: 'MIPS Pipeline Simulator',
         status: 'Planned',
