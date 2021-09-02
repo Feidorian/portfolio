@@ -2,7 +2,7 @@ import { Box, Button, Stack, Slide } from "@material-ui/core";
 import { Document, Page, pdfjs } from 'react-pdf';
 import { useState, useEffect } from 'react';
 import { indigo } from '@material-ui/core/colors';
-import resume from "../images/resumeTemp.pdf";
+import resume from "../images/resume.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 
@@ -28,7 +28,9 @@ function Resume() {
             <Box>
                 <Button component='a' variant='contained' size='large' color='success' href={resume} target='_blank' download='resume_Brian_Ojoh_Mile'>Download Resume</Button>
             </Box>
-            <Box>
+            
+            {/* display page numbers  */}
+            {/* <Box>
                 <Stack direction='row' spacing={1} alignItems='center'>
                     {Array.from({ length: numPages }, (_, i) => i + 1).map(item =>
                         <Button sx={{ width: 'fit-content' }} variant='outlined' color={item === pageNumber ? 'error' : 'primary'}
@@ -37,7 +39,7 @@ function Resume() {
                         </Button>
                     )}
                 </Stack>
-            </Box>
+            </Box> */}
 
             <Box sx={{ 'canvas': { borderRadius: '0.7rem', border: `0.2rem solid ${indigo[900]}` } }}>
                 <Document

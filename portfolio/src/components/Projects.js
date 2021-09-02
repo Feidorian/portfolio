@@ -1,7 +1,7 @@
 import { useReducer, useState, useEffect } from 'react';
 import {
     Box, Card, CardContent, CardHeader, CardMedia, CardActions, Button,
-    Grid, Typography, Paper, Chip, Icon, Stack, Avatar, MenuItem, Collapse
+    Grid, Typography, Paper, Chip, Checkbox, FormControlLabel, Stack, Avatar, MenuItem, Collapse
 } from "@material-ui/core";
 import { teal, indigo, red } from "@material-ui/core/colors";
 import { ReactComponent as APIIcon } from "../images/api-avatar.svg";
@@ -80,7 +80,7 @@ const ProjectStatus = ({ status }) => {
             default: return 'success.dark'
         }
     }
-    return <Typography ml={-1} textAlign='center' fontWeight='500' color={color}><Box component='span' color='success.main'>Status: </Box>Completed</Typography>
+    return <Typography ml={-1} textAlign='center' fontWeight='500' color={color}><Box component='span' color='success.main'>Status: </Box>{status}</Typography>
 };
 
 // return a menu and action button for accessing external links relevant to a project
@@ -132,7 +132,7 @@ const filterType = (item, target) => item.type === target
 
 
 const sortProjects = (sortValue, projectList) => {
-    switch(sortValue) {
+    switch (sortValue) {
         case '1':
             return projectList.sort(sortAscending)
         case '2':
@@ -143,21 +143,21 @@ const sortProjects = (sortValue, projectList) => {
 }
 
 const filterProjects = (filterValue, projectList) => {
-    switch(filterValue) {
+    switch (filterValue) {
         case '1':
-            return projectList.filter(x=>filterStatus(x, 'Completed'))
+            return projectList.filter(x => filterStatus(x, 'Completed'))
         case '2':
-            return projectList.filter(x=>filterStatus(x, 'Development'))
+            return projectList.filter(x => filterStatus(x, 'Development'))
         case '3':
-            return projectList.filter(x=>filterStatus(x, 'Planned'))
+            return projectList.filter(x => filterStatus(x, 'Planned'))
         case '4':
-            return projectList.filter(x=>filterType(x, 'web'))
+            return projectList.filter(x => filterType(x, 'web'))
         case '5':
-            return projectList.filter(x=>filterType(x, 'api'))
+            return projectList.filter(x => filterType(x, 'api'))
         case '6':
-            return projectList.filter(x=>filterType(x, 'dataScience'))
+            return projectList.filter(x => filterType(x, 'dataScience'))
         case '7':
-            return projectList.filter(x=>filterType(x, 'android'))
+            return projectList.filter(x => filterType(x, 'android'))
 
         default:
             return projectList
@@ -172,56 +172,82 @@ const reducer = (state, action) => {
             return { ...state, sortValue: action.data }
         case 'setFilter':
             return { ...state, filterValue: action.data }
+        case 'setCompletedOnly':
+            return { ...state, showCompletedOnlyChecked: !state.showCompletedOnlyChecked }
+        case 'filterCompletedOnly':
+            return { ...state, projectList: state.projectList.filter(x => filterStatus(x, 'Completed')) }
         case 'filter':
             let projectList = sortProjects(state.sortValue, [...projects])
             projectList = filterProjects(state.filterValue, [...projectList])
-            return {...state, projectList:projectList}
+            return { ...state, projectList: projectList }
         default:
-            return state         
+            return state
     }
 };
 
 // initial project state 
+const initlialList = filterProjects('1', sortProjects('3', [...projects]))
 const initialState = {
-    projectList: [...projects],
-    sortValue: 3,
-    filterValue: 1
+    projectList: initlialList,
+    sortValue: '3',
+    filterValue: '1',
+    showCompletedOnlyChecked: true
 };
 
 
 // main function 
 function Projects() {
     const [projectsState, dispatcher] = useReducer(reducer, initialState);
+    const completedOnlyEnabled = () => ['4', '5', '6', '7'].includes(projectsState.filterValue);
     // re-order projects whenever the Sort Value or filterValue is changed 
     useEffect(() => {
         dispatcher({ type: 'filter' })
-    }, [projectsState.sortValue, projectsState.filterValue])
+
+        // for varying type projects, show completed projects only 
+        if (completedOnlyEnabled() && projectsState.showCompletedOnlyChecked) {
+            dispatcher({ type: 'filterCompletedOnly' })
+        }
+
+    }, [projectsState.sortValue, projectsState.filterValue,
+    projectsState.showCompletedOnlyChecked
+    ])
 
     return (
         <Box overflow='auto' p={3} mb='0.5rem' >
-            <Stack direction='row' spacing={1} justifyContent='center' marginBottom={2}>
-                <Box component='select' name='sortOption' borderRadius='0.4rem' backgroundColor='white' padding='0.2rem' color={teal[900]}
-                    onChange={e => dispatcher({ type: 'setSort', data: e.target.value })}>
-                    <Box component='option' value={0} disabled>Sort Projects By</Box>
-                    <Box component='option' value={1} >Ascending</Box>
-                    <Box component='option' value={2}>Descending</Box>
-                    <Box component='option' value={3} selected>Suggested</Box>
-                    {/* <Box component='option'>Python</Box> */}
-                </Box>
-                <Box component='select' name='sortOption' borderRadius='0.4rem' backgroundColor='white' padding='0.2rem' color={indigo[900]} onChange={e => dispatcher({ type: 'setFilter', data: e.target.value })}>
-                    <Box component='option' value={0} disabled>Filter Projects By</Box>
-                    <Box component='option' value={1} selected>Completed</Box>
-                    <Box component='option' value={2}>Development</Box>
-                    <Box component='option' value={3}>Planned</Box>
-                    <Box component='option' value={4}>Web Projects</Box>
-                    <Box component='option' value={5}>API Projects</Box>
-                    <Box component='option' value={6}>Data Science Projects</Box>
-                    <Box component='option' value={7}>Android Projects</Box>
-                </Box>
+            <Stack direction='row' spacing={1} justifyContent='center' alignItems='center' marginBottom={2} flexWrap='wrap'>
+                <Stack direction='row' spacing={1} justifyContent='center'>
+                    <Box component='select' name='sortOption' borderRadius='0.4rem' backgroundColor='white' padding='0.2rem' color={teal[900]}
+                        onChange={e => dispatcher({ type: 'setSort', data: e.target.value })} height='2rem'>
+                        <Box component='option' value={0} disabled>Sort Projects By</Box>
+                        <Box component='option' value={1} >Ascending</Box>
+                        <Box component='option' value={2}>Descending</Box>
+                        <Box component='option' value={3} selected>Suggested</Box>
+                        {/* <Box component='option'>Python</Box> */}
+                    </Box>
+                    <Box component='select' name='sortOption' borderRadius='0.4rem' backgroundColor='white' padding='0.2rem' color={indigo[900]} onChange={e => dispatcher({ type: 'setFilter', data: e.target.value })} height='2rem'>
+                        <Box component='option' value={0} disabled>Filter Projects By</Box>
+                        <Box component='option' value={1} selected>Completed</Box>
+                        <Box component='option' value={2}>Development</Box>
+                        <Box component='option' value={3}>Planned</Box>
+                        <Box component='option' value={4}>Web Projects</Box>
+                        <Box component='option' value={5}>API Projects</Box>
+                        <Box component='option' value={6}>Data Science Projects</Box>
+                        <Box component='option' value={7}>Android Projects</Box>
+                    </Box>
+                </Stack>
+
+                {completedOnlyEnabled() &&
+                    <Box p={1}>
+                        <Box bgcolor='white' px={0.5} borderRadius='0.7rem' component={FormControlLabel} control={
+                            <Checkbox checked={projectsState.showCompletedOnlyChecked} onClick={() => dispatcher({ type: 'setCompletedOnly' })} />
+                        } label='Show Completed Only' color={teal[900]} />
+                    </Box>
+                }
+
             </Stack>
 
-            <Stack component={Masonry} direction='row' breakpointCols={{ default: 4, 1459: 3, 1101: 2, 725: 1 }} 
-                maxWidth={{sm:'60rem', md:'80rem', lg:'85rem', xl:'90rem'}} mx='auto' >
+            <Stack component={Masonry} direction='row' breakpointCols={{ default: 4, 1459: 3, 1101: 2, 725: 1 }}
+                maxWidth={{ sm: '60rem', md: '80rem', lg: '85rem', xl: '90rem' }} justifyContent='center' mx='auto' >
                 {projectsState.projectList.map(item =>
                     <Box p={1} position='relative' display='flex' justifyContent='center'>
                         <Card component={Paper} elevation={5} sx={{ borderRadius: '1rem', maxWidth: 360, minWidth: 330 }}>
