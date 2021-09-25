@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.1ebec18a.chunk.css",
-    "main.js": "/static/js/main.1be2caf2.chunk.js",
-    "main.js.map": "/static/js/main.1be2caf2.chunk.js.map",
+    "main.js": "/static/js/main.64a7ff47.chunk.js",
+    "main.js.map": "/static/js/main.64a7ff47.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.92c0966f.js",
     "runtime-main.js.map": "/static/js/runtime-main.92c0966f.js.map",
     "static/css/2.9774ade5.chunk.css": "/static/css/2.9774ade5.chunk.css",
-    "static/js/2.ba53eaca.chunk.js": "/static/js/2.ba53eaca.chunk.js",
-    "static/js/2.ba53eaca.chunk.js.map": "/static/js/2.ba53eaca.chunk.js.map",
+    "static/js/2.8b9e3a0d.chunk.js": "/static/js/2.8b9e3a0d.chunk.js",
+    "static/js/2.8b9e3a0d.chunk.js.map": "/static/js/2.8b9e3a0d.chunk.js.map",
     "static/js/3.9e5485d6.chunk.js": "/static/js/3.9e5485d6.chunk.js",
     "static/js/3.9e5485d6.chunk.js.map": "/static/js/3.9e5485d6.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.9774ade5.chunk.css.map": "/static/css/2.9774ade5.chunk.css.map",
     "static/css/main.1ebec18a.chunk.css.map": "/static/css/main.1ebec18a.chunk.css.map",
-    "static/js/2.ba53eaca.chunk.js.LICENSE.txt": "/static/js/2.ba53eaca.chunk.js.LICENSE.txt",
+    "static/js/2.8b9e3a0d.chunk.js.LICENSE.txt": "/static/js/2.8b9e3a0d.chunk.js.LICENSE.txt",
     "static/media/0.JPG": "/static/media/0.2e111b9e.JPG",
     "static/media/0.png": "/static/media/0.f5ea8c32.png",
     "static/media/1.JPG": "/static/media/1.367520f5.JPG",
@@ -29,7 +29,6 @@
     "static/media/amazonwebservices-original.be3450a3.svg": "/static/media/amazonwebservices-original.be3450a3.svg",
     "static/media/android-icon.1b6effe7.svg": "/static/media/android-icon.1b6effe7.svg",
     "static/media/android-plain.112d7863.svg": "/static/media/android-plain.112d7863.svg",
-    "static/media/android.24fc761e.svg": "/static/media/android.24fc761e.svg",
     "static/media/api-avatar.39bb8e8c.svg": "/static/media/api-avatar.39bb8e8c.svg",
     "static/media/app-development.ce5b05c8.svg": "/static/media/app-development.ce5b05c8.svg",
     "static/media/artificial-intelligence.fdba2afc.svg": "/static/media/artificial-intelligence.fdba2afc.svg",
@@ -39,7 +38,6 @@
     "static/media/c-plain.edbf0807.svg": "/static/media/c-plain.edbf0807.svg",
     "static/media/css3-plain.6360e012.svg": "/static/media/css3-plain.6360e012.svg",
     "static/media/customer-service.dfab922f.svg": "/static/media/customer-service.dfab922f.svg",
-    "static/media/data-science-avatar.944e41da.svg": "/static/media/data-science-avatar.944e41da.svg",
     "static/media/data-science.30999f9a.svg": "/static/media/data-science.30999f9a.svg",
     "static/media/design-thinking.da3d4a5a.svg": "/static/media/design-thinking.da3d4a5a.svg",
     "static/media/express-original.4925c012.svg": "/static/media/express-original.4925c012.svg",
@@ -95,8 +93,8 @@
   "entrypoints": [
     "static/js/runtime-main.92c0966f.js",
     "static/css/2.9774ade5.chunk.css",
-    "static/js/2.ba53eaca.chunk.js",
+    "static/js/2.8b9e3a0d.chunk.js",
     "static/css/main.1ebec18a.chunk.css",
-    "static/js/main.1be2caf2.chunk.js"
+    "static/js/main.64a7ff47.chunk.js"
   ]
 }
