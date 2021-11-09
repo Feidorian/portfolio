@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9100f21a.chunk.css",
-    "main.js": "/static/js/main.2a749ae7.chunk.js",
+    "main.js": "/static/js/main.bdbde5cb.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.89cb15f8.js",
     "static/css/2.d316d967.chunk.css": "/static/css/2.d316d967.chunk.css",
     "static/js/2.c06b78c5.chunk.js": "/static/js/2.c06b78c5.chunk.js",
@@ -69,7 +69,7 @@
     "static/media/pycharm-plain.935da1ac.svg": "/static/media/pycharm-plain.935da1ac.svg",
     "static/media/python-plain.092c8713.svg": "/static/media/python-plain.092c8713.svg",
     "static/media/react-original.106f23b2.svg": "/static/media/react-original.106f23b2.svg",
-    "static/media/resume.e4e8203c.pdf": "/static/media/resume.e4e8203c.pdf",
+    "static/media/resume.1b79d2c7.pdf": "/static/media/resume.1b79d2c7.pdf",
     "static/media/ruby-plain.952af840.svg": "/static/media/ruby-plain.952af840.svg",
     "static/media/rust-plain.d8af41ea.svg": "/static/media/rust-plain.d8af41ea.svg",
     "static/media/shoppers.81f950ab.png": "/static/media/shoppers.81f950ab.png",
@@ -92,6 +92,6 @@
     "static/css/2.d316d967.chunk.css",
     "static/js/2.c06b78c5.chunk.js",
     "static/css/main.9100f21a.chunk.css",
-    "static/js/main.2a749ae7.chunk.js"
+    "static/js/main.bdbde5cb.chunk.js"
   ]
 }
